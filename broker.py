@@ -2,14 +2,18 @@ keybinds = dict()
 registry = dict()
 enqueued = list()
 
-def bind(function, *keys):
-    keybinds[keys] = function
+def bind(*keys, action=lambda: print("key pressed")):
+    keybinds[keys] = action
 
 def handle(keys):
     keybinds[keys]()
 
-def register(handler, event):
-    if event not in registry:
+def register(event, handler, new=True):
+    if new and event in registry:
+        raise KeyError(f"New event {event} already exists in the registry. Disable event creation to add to existing {event} handler list.")
+    if not new and event not in registry:
+        raise KeyError(f"New event creation was disabled and {event} was not found in the registry.")
+    if new and event not in registry:
         registry[event] = list()
     registry[event].append(handler)
 
@@ -30,5 +34,6 @@ def flush():
     enqueued.clear()
 
 import pygame
-bind(lambda: print("a pressed"), pygame.K_a)
-register(lambda *args: ..., pygame.MOUSEBUTTONDOWN)
+bind(pygame.K_a)
+register(pygame.MOUSEBUTTONDOWN, lambda *args, **kwargs: ...)
+register(pygame.MOUSEBUTTONDOWN, lambda *args, **kwargs: ...)

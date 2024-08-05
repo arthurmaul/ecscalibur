@@ -18,6 +18,7 @@ def table(*parts):
 def push(destination, actor, *parts):
     for index, part in enumerate(destination):
         part.append(parts[index])
+    actor = 
 
 def pull(actor, *parts):
     location, index = registry[actor]
