@@ -15,8 +15,8 @@ pygame.display.set_caption("E C S C A L I B U R")
 
 def events():
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            return
+        if event.type == pygame.QUIT: return
+        if event.type not in broker.registry: continue
         broker.send(event.type, event)
     keys = pygame.key.get_pressed()
     for binding in broker.keybinds:
