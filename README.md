@@ -52,7 +52,7 @@ todo...
 | physics   | forces, rigid bodies, and colliders |
 | graphics  | text, sprites, spritegroups, spritesheets, and an animation player |
 | models    | the entity, tag, relationship, and component models, and its associated functionality |
-| prefabs   | built in components, just as a 2d controller|
+| prefabs   | built in components, such as top down/platformer controllers, 3rd person cameras, procedural generation, etc |
 
 ### Models
 | model type | description |
