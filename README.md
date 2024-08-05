@@ -25,6 +25,7 @@
 | models    | the entity, tag, relationship, and component models, and its associated functionality |
 | prefabs   | built in components, just as a 2d controller|
 
+### Models
 | model type | description |
 | --- | --- |
 |world | the entity, component, relation, and other constructors |
