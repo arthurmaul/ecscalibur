@@ -31,6 +31,3 @@ def flush():
         send(event, *args, **kwargs)
     enqueued.clear()
 
-import pygame
-bind(pygame.K_a)
-register(pygame.MOUSEBUTTONDOWN, new=True)

@@ -1,6 +1,5 @@
 import pygame 
-import broker
-import scheduler
+from ecscalibur import broker, scheduler
 
 pygame.init()
 
